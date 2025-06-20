@@ -31,17 +31,25 @@
         }
         
         .header-container {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 2rem 0;
+            flex-wrap: wrap;
+            text-align: left;
         }
         
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             object-fit: cover;
-            margin-bottom: 16px;
+            margin-right: 24px;
             border-radius: 50%;
             border: 3px solid var(--glass-border);
+        }
+        
+        .header-text {
+            max-width: 600px;
         }
         
         .modern-nav {
@@ -55,7 +63,7 @@
             margin-bottom: 2rem;
             z-index: 1050;
             position: relative;
-            max-width: 66.66%;
+            max-width: 75%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -106,10 +114,10 @@
             border: 1px solid var(--glass-border);
             border-radius: 16px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-            padding: 2rem;
+            padding: 1.5rem;
             margin-bottom: 2rem;
             transition: transform 0.3s ease;
-            max-width: 66.66%;
+            max-width: 75%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -121,16 +129,17 @@
         
         .section-title {
             color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
             position: relative;
             display: inline-block;
+            font-size: 1.4rem;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -6px;
             left: 0;
             width: 50%;
             height: 3px;
@@ -156,7 +165,7 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .timeline-item::before {
@@ -181,15 +190,11 @@
             border-bottom: none;
         }
         
-        .award-badge {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+        .award-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         footer {
@@ -197,7 +202,7 @@
             padding: 2rem 0;
             color: var(--text-light);
             font-size: 0.9rem;
-            max-width: 66.66%;
+            max-width: 75%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -215,9 +220,16 @@
         }
         
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
             .profile-img {
                 width: 80px;
                 height: 80px;
+                margin-right: 0;
+                margin-bottom: 16px;
             }
             
             .modern-nav,
@@ -231,7 +243,11 @@
             }
             
             .glass-card {
-                padding: 1.5rem;
+                padding: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -241,14 +257,16 @@
     <div class="container py-4">
         <div class="header-container">
             <img class="profile-img" src="profile.jpg" alt="Liao Ma">
-            <h1 style="font-size: 2rem;">Liao Ma</h1>
-            <div class="mt-2" style="font-size: 1rem;">
-                <a href="mailto:lama22@m.fudan.edu.cn" class="text-decoration-none me-2">
-                    <i class="bi bi-envelope-fill"></i> lama22@m.fudan.edu.cn
-                </a><br class="d-md-none">
-                <a href="https://github.com/Azazel-Malaria" target="_blank" class="text-decoration-none">
-                    <i class="bi bi-github"></i> github.com/Azazel-Malaria
-                </a>
+            <div class="header-text">
+                <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Liao Ma</h1>
+                <div class="mt-2" style="font-size: 1rem;">
+                    <a href="mailto:lama22@m.fudan.edu.cn" class="text-decoration-none me-2">
+                        <i class="bi bi-envelope-fill"></i> lama22@m.fudan.edu.cn
+                    </a><br class="d-md-none">
+                    <a href="https://github.com/Azazel-Malaria" target="_blank" class="text-decoration-none">
+                        <i class="bi bi-github"></i> github.com/Azazel-Malaria
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -327,12 +345,8 @@
         <!-- Awards Section -->
         <div id="awards" class="glass-card">
             <h2 class="section-title">Honors & Awards</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="glass-card p-3 mb-3">
-                        <h5><i class="bi bi-trophy-fill text-warning me-2"></i> 2024 Scholarship of Fudan University</h5>
-                    </div>
-                </div>
+            <div class="award-item">
+                <h5><i class="bi bi-trophy-fill text-warning me-2"></i> 2024 Scholarship of Fudan University</h5>
             </div>
         </div>
 

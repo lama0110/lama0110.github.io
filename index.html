@@ -1,346 +1,725 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Academic, Researcher, Portfolio">
-    <meta name="description" content="Personal academic website showcasing research and achievements">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <title> Liao Ma | Homepage</title>
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --primary-hover: #4338ca;
-            --glass-bg: rgba(255, 255, 255, 0.15);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --accent-color: #10b981;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: var(--text-dark);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-            text-align: left;
-        }
-        
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 24px;
-            border-radius: 50%;
-            border: 3px solid var(--glass-border);
-        }
-        
-        .header-text {
-            max-width: 600px;
-        }
-        
-        .modern-nav {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-            padding: 0.5rem 1rem;
-            margin-bottom: 2rem;
-            z-index: 1050;
-            position: relative;
-            max-width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .modern-nav .nav-link {
-            color: var(--text-dark);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .modern-nav .nav-link:hover, 
-        .modern-nav .nav-link:focus {
-            background: rgba(255, 255, 255, 0.3);
-            color: var(--primary-color);
-        }
-        
-        .modern-nav .nav-link.active {
-            background: var(--primary-color);
-            color: white !important;
-        }
-        
-        .modern-nav .dropdown-menu {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            z-index: 1051;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Liao Ma, Academic, Researcher, Fudan University, BASA, PathSculpt" />
+  <meta name="description" content="Liao Ma's academic homepage, research, education, and honors." />
+  <meta name="theme-color" content="#f7f8fb" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Liao Ma | Homepage</title>
 
-        .modern-nav .dropdown-item {
-            color: var(--text-dark);
-            transition: all 0.2s ease;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); 
-        }
-        
-        .modern-nav .dropdown-item:hover {
-            background: rgba(255, 255, 255, 0.3);
-            color: var(--primary-color);
-        }
-        
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease;
-            max-width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
-        }
-        
-        .section-title {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            position: relative;
-            display: inline-block;
-            font-size: 1.4rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 50%;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 3px;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary-color);
-            opacity: 0.3;
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            border: 2px solid white;
-        }
-        
-        .pub-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-        }
-        
-        .pub-item:last-child {
-            border-bottom: none;
-        }
-        
-        .award-item {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            max-width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .social-icon {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .profile-img {
-                width: 80px;
-                height: 80px;
-                margin-right: 0;
-                margin-bottom: 16px;
-            }
-            
-            .modern-nav,
-            .glass-card,
-            footer {
-                max-width: 90%;
-            }
-            
-            .modern-nav {
-                padding: 0.5rem;
-            }
-            
-            .glass-card {
-                padding: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f8fb;
+      --ink: #121826;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --accent: #3157d5;
+      --accent-dark: #2443aa;
+      --accent-soft: #eef2ff;
+      --shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 78px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      font-size: 1.18rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.92rem;
+      color: #475569;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      padding: 82px 0 64px;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(49, 87, 213, 0.10), transparent 32%),
+        radial-gradient(circle at 85% 25%, rgba(80, 125, 255, 0.08), transparent 28%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 34px;
+      align-items: center;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .profile-wrap {
+      width: 150px;
+      height: 150px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid #dbe4ff;
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      font-size: 0.82rem;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 15px 0 10px;
+      font-size: clamp(2.45rem, 6vw, 4.35rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      color: #475569;
+      font-size: 1.05rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact-link,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid #d8dfeb;
+      border-radius: 11px;
+      background: #fff;
+      text-decoration: none;
+      font-size: 0.91rem;
+      font-weight: 730;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .contact-link:hover,
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: #b9c5d8;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    }
+
+    .button.primary {
+      color: #fff;
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    .button.primary:hover {
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+    }
+
+    .button.disabled {
+      color: #8b96a8;
+      border-color: #e2e8f0;
+      background: #f8fafc;
+      cursor: default;
+      pointer-events: none;
+      box-shadow: none;
+    }
+
+    /* Shared section styles */
+    section { padding: 76px 0; }
+    section.soft { background: var(--bg-soft); }
+
+    .section-head {
+      max-width: 820px;
+      margin-bottom: 30px;
+    }
+
+    .section-head.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0 0 13px;
+      font-size: clamp(1.85rem, 4vw, 2.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin: 0;
+      letter-spacing: -0.025em;
+    }
+
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 27px;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.045);
+    }
+
+    /* Biography */
+    .bio-card {
+      max-width: 900px;
+      font-size: 1.02rem;
+    }
+
+    /* Education */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 7px;
+      bottom: 8px;
+      width: 2px;
+      background: #dbe4ff;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 28px 12px;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px #cbd5e1;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 4px;
+      font-size: 1.08rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Research */
+    .research-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .research-card {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.45fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 14px 44px rgba(15, 23, 42, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-2px);
+      border-color: #d4ddeb;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.09);
+    }
+
+    .research-visual {
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-right: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .research-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .research-visual img.basa-figure {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .research-content {
+      padding: 29px 30px 27px;
+    }
+
+    .research-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 13px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border: 1px solid #dbe4ff;
+      border-radius: 999px;
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+      font-size: 0.78rem;
+      font-weight: 760;
+      letter-spacing: 0.01em;
+    }
+
+    .research-title {
+      margin: 0 0 13px;
+      font-size: clamp(1.22rem, 2.3vw, 1.58rem);
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+    }
+
+    .authors {
+      margin: 0 0 18px;
+      color: #475569;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .authors strong {
+      color: var(--ink);
+      font-weight: 820;
+    }
+
+    .authors sup {
+      font-size: 0.72em;
+      vertical-align: super;
+      margin-left: 1px;
+    }
+
+    .equal-note {
+      display: block;
+      margin-top: -10px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .research-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    /* Awards and interests */
+    .simple-list {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+    }
+
+    .simple-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 17px 19px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    .simple-year {
+      flex: 0 0 auto;
+      min-width: 48px;
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    .simple-item p { margin: 0; }
+
+    .interests-card {
+      max-width: 900px;
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .interest-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #475569;
+      background: #f8fafc;
+      font-size: 0.85rem;
+      font-weight: 650;
+    }
+
+    footer {
+      padding: 32px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .research-card {
+        grid-template-columns: 1fr;
+      }
+
+      .research-visual {
+        min-height: 220px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .research-visual img { min-height: 220px; }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        min-height: 58px;
+      }
+
+      .nav-links { display: none; }
+
+      .hero {
+        padding: 58px 0 48px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+        text-align: center;
+      }
+
+      .profile-wrap {
+        width: 124px;
+        height: 124px;
+        margin: 0 auto;
+      }
+
+      .contact-links { justify-content: center; }
+
+      section { padding: 58px 0; }
+
+      .section-head {
+        margin-bottom: 24px;
+      }
+
+      .research-content {
+        padding: 23px 21px 22px;
+      }
+
+      .research-visual,
+      .research-visual img {
+        min-height: 185px;
+      }
+
+      .card { padding: 22px; }
+
+      .simple-item {
+        display: block;
+      }
+
+      .simple-year {
+        display: block;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container py-4">
-        <div class="header-container">
-            <img class="profile-img" src="profile.jpg" alt="Liao Ma">
-            <div class="header-text">
-                <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Liao Ma</h1>
-                <div class="mt-2" style="font-size: 1rem;">
-                    <a href="mailto:lama22@m.fudan.edu.cn" class="text-decoration-none me-2">
-                        <i class="bi bi-envelope-fill"></i> lama22@m.fudan.edu.cn
-                    </a><br class="d-md-none">
-                    <a href="https://github.com/Azazel-Malaria" target="_blank" class="text-decoration-none">
-                        <i class="bi bi-github"></i> github.com/Azazel-Malaria
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Navigation -->
-        <div class="modern-nav">
-            <ul class="nav nav-pills justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#biography">Biography</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#news">News</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#experience">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#researches">Researches</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#awards">Awards</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Biography Section -->
-        <div id="biography" class="glass-card">
-            <h2 class="section-title">Biography</h2>
-            <p>I am the year 4 undergraduate student of Fudan University, School of Data Science. I am currently interested in multimodel learning, image and video generation, and medical image analysis.</p>
-        </div>
-
-        <!-- News Section -->
-        <!-- <div id="news" class="glass-card">
-            <h2 class="section-title">News</h2>
-            <div class="timeline">
-            </div>
-        </div> -->
-
-        <!-- Experience Section -->
-        <div id="experience" class="glass-card">
-            <h2 class="section-title">Educations</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h5>B.Sc. of School of Data Science</h5>
-                    <p class="text-muted">Fudan University | 2023 - Present</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>Exchange of School of Computing and Data Science</h5>
-                    <p class="text-muted">University of Hong Kong | 2024 Fall</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Researches Section -->
-        <div id="researches" class="glass-card">
-            <h2 class="section-title">Researches</h2>
-                <h5>BASA: Backend-Agnostic Sparse Attention for Fast High-Resolution Visual Generation</h5>
-                <p class="text-muted">ICLR 2027 in submission</p>
-        </div>
-
-        <!-- Awards Section -->
-        <div id="awards" class="glass-card">
-            <h2 class="section-title">Honors & Awards</h2>
-                <p> 2023 Third Grade Scholarship of Fudan University</p>
-                <p> 2024 Third Grade Scholarship of Fudan University</p>
-        </div>
-
-        <footer>
-            <p>© 2025 Liao Ma. All rights reserved.</p>
-            <p class="text-muted">Last updated: June 2025</p>
-        </footer>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Liao Ma</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#biography">Biography</a>
+        <a href="#experience">Education</a>
+        <a href="#researches">Research</a>
+        <a href="#awards">Awards</a>
+        <a href="#interests">Interests</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="profile-wrap">
+            <img class="profile-img" src="profile.jpg" alt="Liao Ma" />
+          </div>
+
+          <div>
+            <span class="eyebrow">Academic Homepage</span>
+            <h1>Liao Ma</h1>
+            <p class="hero-subtitle">Fudan University · School of Data Science</p>
+
+            <div class="contact-links" aria-label="Contact links">
+              <a class="contact-link" href="mailto:lama22@m.fudan.edu.cn">lama22@m.fudan.edu.cn</a>
+              <a class="contact-link" href="https://github.com/Azazel-Malaria" target="_blank" rel="noopener">GitHub · Azazel-Malaria</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="biography">
+      <div class="container">
+        <div class="section-head">
+          <h2>Biography</h2>
+        </div>
+        <div class="card bio-card">
+          <p>
+            I am the year 4 undergraduate student of Fudan University, School of Data Science.
+            I am currently interested in multimodel learning, image and video generation, and medical image analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Education</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>B.Sc. of School of Data Science</h3>
+            <p>Fudan University | 2023 - Present</p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Exchange of School of Computing and Data Science</h3>
+            <p>University of Hong Kong | 2024 Fall</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="researches">
+      <div class="container">
+        <div class="section-head">
+          <h2>Research</h2>
+          <p class="muted">Selected research projects and manuscripts.</p>
+        </div>
+
+        <div class="research-list">
+          <article class="research-card">
+            <div class="research-visual">
+              <img
+                class="basa-figure"
+                src="assets/method_v13.svg"
+                alt="BASA method overview"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="research-content">
+              <div class="research-meta">
+                <span class="status-pill">Submitted to ICLR 2027</span>
+              </div>
+
+              <h3 class="research-title">BASA: Backend-Agnostic Sparse Attention for Fast High-Resolution Visual Generation</h3>
+
+              <p class="authors">
+                <strong>Liao Ma</strong> · Jiayi Song · Yunfeng Wu · Songhua Liu · Peilin Zhao
+              </p>
+
+              <div class="research-links" aria-label="BASA links">
+                <a class="button primary" href="https://lama0110.github.io/basa_project/" target="_blank" rel="noopener">Project Page</a>
+                <a class="button" href="https://github.com/lama0110/BASA/tree/main" target="_blank" rel="noopener">GitHub</a>
+                <span class="button disabled" aria-disabled="true" title="Coming soon">arXiv</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual">
+              <img
+                src="assets/pathsculpt-figure.png"
+                alt="PathSculpt overview"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="research-content">
+              <div class="research-meta">
+                <span class="status-pill">Submitted to Nature Communications</span>
+              </div>
+
+              <h3 class="research-title">PathSculpt: A Knowledge-guided Optimization Framework Enables Computationally Efficient Adaptation of Whole-Slide Foundation Models for Scalable Cancer Diagnosis</h3>
+
+              <p class="authors">
+                Yanyan Huang<sup>*</sup>, <strong>Liao Ma<sup>*</sup></strong>, Weiqin Zhao, Zhengyu Zhang,
+                Peixiang Huang, Yu Fu, Anfang He, Jianning Chen, Maximus Yeung, Li Liang,
+                Shujun Wang, and Lequan Yu
+              </p>
+              <span class="equal-note"><sup>*</sup> Equal contribution.</span>
+
+              <div class="research-links" aria-label="PathSculpt links">
+                <a class="button primary" href="https://github.com/HKU-MedAI/PathSculpt" target="_blank" rel="noopener">GitHub</a>
+                <span class="button disabled" aria-disabled="true" title="Coming soon">arXiv</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Honors &amp; Awards</h2>
+        </div>
+
+        <div class="simple-list">
+          <div class="simple-item">
+            <span class="simple-year">2023</span>
+            <p>Third Grade Scholarship of Fudan University</p>
+          </div>
+          <div class="simple-item">
+            <span class="simple-year">2024</span>
+            <p>Third Grade Scholarship of Fudan University</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="container">
+        <div class="section-head">
+          <h2>Interests</h2>
+        </div>
+
+        <div class="card interests-card">
+          <p>
+            Outside research, I enjoy basketball and football, and I am a fan of fantasy, science fiction,
+            and comedy. Some of my favorites include Middle-earth, <em>Doctor Who</em>,
+            <em>The Big Bang Theory</em>, and <em>The Three-Body Problem</em>. I also enjoy gaming across
+            PC, PlayStation, and Nintendo Switch.
+          </p>
+
+          <div class="interest-tags" aria-label="Personal interests">
+            <span class="interest-tag">Basketball</span>
+            <span class="interest-tag">Football</span>
+            <span class="interest-tag">Fantasy &amp; Sci-Fi</span>
+            <span class="interest-tag">TV &amp; Novels</span>
+            <span class="interest-tag">PC Gaming</span>
+            <span class="interest-tag">PlayStation</span>
+            <span class="interest-tag">Nintendo Switch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Liao Ma. All rights reserved.</p>
+      <p>Last updated: June 2025</p>
+    </div>
+  </footer>
 </body>
 </html>
-

@@ -140,7 +140,7 @@
 
     h1 {
       margin: 15px 0 10px;
-      font-size: clamp(2.05rem, 4.6vw, 3.35rem);
+      font-size: clamp(1.78rem, 3.8vw, 2.85rem);
       line-height: 1.02;
       letter-spacing: -0.045em;
     }
@@ -326,26 +326,20 @@
       background: #fff;
     }
 
+    /* Keep every research figure fully visible. The browser scales each image
+       according to its own aspect ratio so its longest side fits the viewport. */
     .research-visual img {
       width: 100%;
       height: 100%;
       min-height: 0;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
     }
 
-    /* BASA is a wide figure: zoom in slightly and keep the upper-middle area. */
-    .research-visual img.basa-figure {
-      object-position: center 28%;
-      transform: scale(1.14);
-      transform-origin: center 28%;
-    }
-
-    /* PathSculpt is vertically long: crop the lower part and prioritize the top. */
+    .research-visual img.basa-figure,
     .research-visual img.pathsculpt-figure {
-      object-position: center 10%;
-      transform: scale(1.03);
-      transform-origin: center top;
+      transform: none;
+      object-position: center;
     }
 
     .research-content {
@@ -523,13 +517,6 @@
         height: clamp(185px, 55vw, 235px);
       }
 
-      .research-visual img.basa-figure {
-        transform: scale(1.09);
-      }
-
-      .research-visual img.pathsculpt-figure {
-        object-position: center 8%;
-      }
 
       .card { padding: 22px; }
 
@@ -714,8 +701,8 @@
         <div class="card interests-card">
           <p>
             Outside research, I enjoy basketball and football, and I am a fan of fantasy, science fiction,
-            and comedy. Some of my favorites include Middle-earth Series, Doctor Who,
-            The Big Bang Theory Series, The Three-Body Problem, etc.. I also a gaming fan across
+            and comedy. Some of my favorites include Middle-earth, <em>Doctor Who</em>,
+            <em>The Big Bang Theory</em>, and <em>The Three-Body Problem</em>. I also enjoy gaming across
             PC, PlayStation, and Nintendo Switch.
           </p>
 

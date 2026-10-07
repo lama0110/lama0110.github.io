@@ -192,6 +192,39 @@
       background: var(--accent-dark);
     }
 
+    .button.github {
+      gap: 8px;
+      color: #fff;
+      border-color: #111827;
+      background: #111827;
+    }
+
+    .button.github:hover {
+      color: #fff;
+      border-color: #000;
+      background: #000;
+    }
+
+    .button.arxiv {
+      gap: 8px;
+      color: #fff;
+      border-color: #b31b1b;
+      background: #b31b1b;
+    }
+
+    .button.arxiv:hover {
+      color: #fff;
+      border-color: #8f1616;
+      background: #8f1616;
+    }
+
+    .button-icon {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
+      display: block;
+    }
+
     .button.disabled {
       color: #8b96a8;
       border-color: #e2e8f0;
@@ -654,8 +687,15 @@
 
               <div class="research-links" aria-label="BASA links">
                 <a class="button primary" href="https://lama0110.github.io/basa_project/" target="_blank" rel="noopener">Project Page</a>
-                <a class="button primary" href="https://github.com/lama0110/BASA/tree/main" target="_blank" rel="noopener">GitHub</a>
-                <span class="button disabled" aria-disabled="true" title="Coming soon">arXiv</span>
+                <a class="button github" href="https://github.com/lama0110/BASA/tree/main" target="_blank" rel="noopener" aria-label="BASA GitHub repository">
+                  <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M12 .7C5.7.7.6 5.8.6 12.1c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.3c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.4 5.8 18.3.7 12 .7Z"/>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a class="button arxiv" href="https://arxiv.org/abs/2610.08772" target="_blank" rel="noopener" aria-label="BASA arXiv paper">
+                  <span>arXiv</span>
+                </a>
               </div>
             </div>
           </article>
@@ -685,8 +725,15 @@
               <span class="equal-note"><sup>*</sup> Equal contribution.</span>
 
               <div class="research-links" aria-label="PathSculpt links">
-                <a class="button primary" href="https://github.com/HKU-MedAI/PathSculpt" target="_blank" rel="noopener">GitHub</a>
-                <span class="button disabled" aria-disabled="true" title="Coming soon">arXiv</span>
+                <a class="button github" href="https://github.com/HKU-MedAI/PathSculpt" target="_blank" rel="noopener" aria-label="PathSculpt GitHub repository">
+                  <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M12 .7C5.7.7.6 5.8.6 12.1c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.3c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.4 5.8 18.3.7 12 .7Z"/>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <span class="button disabled" aria-disabled="true" title="Coming soon">
+                  <span>arXiv</span>
+                </span>
               </div>
             </div>
           </article>
